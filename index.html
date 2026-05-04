@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apparatus Creatives</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color:white;
+}
+
+/* HEADER */
+header{
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:48px;
+  background:linear-gradient(45deg,#22c55e,#4ade80);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:15px;
+  color:#cbd5f5;
+}
+
+.btn{
+  margin-top:15px;
+  padding:12px 25px;
+  background:#22c55e;
+  color:black;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  text-align:center;
+  display:inline-block;
+}
+
+/* SECTION */
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* REELS */
+.reel-container{
+  display:flex;
+  overflow-x:auto;
+  gap:20px;
+  padding:20px;
+}
+
+.reel{
+  min-width:280px;
+  height:480px;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.reel iframe{
+  width:100%;
+  height:100%;
+}
+
+/* PRICING */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.price{
+  font-size:26px;
+  color:#22c55e;
+  margin:10px 0;
+}
+
+/* CONTACT FINAL FIX */
+.contact-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.contact-card{
+  flex:1 1 250px;
+  max-width:300px;
+  min-height:180px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.contact-card h3{
+  color:#22c55e;
+  margin-bottom:10px;
+}
+
+.contact-card p{
+  word-break:break-word;
+  color:#cbd5f5;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  color:white;
+  text-decoration:none;
+}
+
+/* ANIMATION */
+.hidden{opacity:0;transform:translateY(30px);transition:0.6s;}
+.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+
+<body>
+
+<header>🚀 Apparatus Creatives</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Smart Content, Real Impact</h1>
+  <p>We create reels & ads that grow your business.</p>
+  <a href="#pricing" class="btn">View Pricing</a>
+</section>
+
+<!-- ABOUT -->
+<section class="section hidden">
+  <h2>About Us</h2>
+  <p style="max-width:700px;margin:auto;color:#cbd5f5;">
+    We help brands scale using content, social media strategy, and high-performing ads.
+  </p>
+</section>
+
+<!-- REELS -->
+<section class="section hidden">
+  <h2>Our Work</h2>
+  <div class="reel-container">
+    <div class="reel"><iframe src="https://www.instagram.com/reel/DXzMc_MooSV/embed"></iframe></div>
+    <div class="reel"><iframe src="https://www.instagram.com/reel/DXrKjtxIEqy/embed"></iframe></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section hidden" id="pricing">
+  <h2>Pricing</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Per Video</h3>
+      <div class="price">₹1750</div>
+      <p>Shooting & Editing</p>
+      <button class="btn" onclick="buyPlan('Per Video Plan','Price: ₹1750 | Shooting + Editing')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>1 Month</h3>
+      <div class="price">₹10,000</div>
+      <p>6 Videos + Social Media</p>
+      <button class="btn" onclick="buyPlan('1 Month Plan','₹10,000 | WhatsApp, Instagram, Facebook | 6 Videos | 5-6 Posts | SEO | Ads Extra')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>3 Months</h3>
+      <div class="price">₹25,000</div>
+      <p>Best Value</p>
+      <button class="btn" onclick="buyPlan('3 Months Plan','₹25,000 | Social Media + Growth | SEO | Ads Extra')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>6 Months</h3>
+      <div class="price">₹45,000</div>
+      <p>Full Growth</p>
+      <button class="btn" onclick="buyPlan('6 Months Plan','₹45,000 | Full Management | SEO | Ads Extra')">Buy</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section hidden">
+  <h2>Contact Us</h2>
+
+  <div class="contact-container">
+
+    <div class="contact-card">
+      <div>
+        <h3>Rohan Pandey</h3>
+        <p>+91 78018 50606</p>
+      </div>
+      <a href="https://wa.me/917801850606" class="btn">Message</a>
+    </div>
+
+    <div class="contact-card">
+      <div>
+        <h3>Miheer Singh</h3>
+        <p>+91 70167 19208</p>
+      </div>
+      <a href="https://wa.me/917016719208" class="btn">Message</a>
+    </div>
+
+    <div class="contact-card">
+      <div>
+        <h3>Email</h3>
+        <p>apparatus.creatives@gmail.com</p>
+      </div>
+      <a href="mailto:apparatus.creatives@gmail.com" class="btn">Mail</a>
+    </div>
+
+    <div class="contact-card">
+      <div>
+        <h3>Instagram</h3>
+        <p>@apparatus.studios</p>
+      </div>
+      <a href="https://instagram.com/apparatus.studios" class="btn">Visit</a>
+    </div>
+
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917801850606">💬</a>
+
+<script>
+function buyPlan(name,details){
+  let msg = `Hello, I am interested in ${name}. %0A${details}`;
+  window.open(`https://wa.me/917016719208?text=${msg}`,"_blank");
+}
+
+/* animation */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");}});
+});
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
